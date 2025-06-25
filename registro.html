@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="PT-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar - Automação Hoje</title>
+    <link rel="icon" href="img/login_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg" type="image/png">
+</head>
+<link rel="stylesheet" href="registro.css">
+<body>
+    <main class="container">
+        <form action="login.html" method="GET">
+            <h1>Registro</h1>
+                <div class="input-box">
+                  <input type="name" placeholder="Nome" required autocomplete="on">
+                  <img src="img/badge_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="">
+                </div>   
+                <div class="input-box">
+                    <input type="password" placeholder="Senha" required autocomplete="on">  
+                   <img src="img/lock_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="">
+                </div>
+                 <div class="input-box">
+                    <input type="date" class="sem-icone" placeholder="Data de Nascimento" required  pattern="^(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/([0-9]{4})$" autocomplete="on">  
+                   <img src="img/calendar_month_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="">
+                </div>
+                 <div class="input-box">
+                    <input type="tel" placeholder="Telefone" required pattern="^\d{10,11}$" autocomplete="on">  
+                   <img src="img/call_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="">
+                </div>
+                  <div class="input-box">
+                    <input type="email" placeholder="Email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" autocomplete="on">  
+                   <img src="img/mail_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="">
+                </div>
+                <div class="input-box">
+                    <input type="email" placeholder="Confirm Email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" autocomplete="on">   
+                   <img src="img/mail_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="">
+                </div>
+                <div style="display: inline-block; background: transparent; width: 120px; padding: 5px;">
+                  <button class="btn2" type="button"><a class="voltar" href="login.html">Voltar</a></button>
+                </div>
+                 <div style="display: inline-block; background: transparent; width: 120px; padding: 5px;">
+                  <button class="btn" type="submit">Entrar</button>
+                </div>
+       </form>
+    </main>
+    <footer>Este site foi desenvolvido Por Pedro Cortez <a target="_blank" class="img-roda" href="https://github.com/PedroCrtz"><img class="logo-rodape" src="img/icons8-github.svg" alt="">GitHub</a><a target="_blank" class="img-roda" href="https://www.instagram.com/pedroragusa_/"><img class="logo-rodape" src="img/instagram.png" alt="">Instagram</a></footer>
+</body>
+<script src="login.js"></script>
+</html>

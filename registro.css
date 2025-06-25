@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+
+
+body{
+    background-image: url(img/bac2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: "Open Sans", sans-serif;
+}
+
+footer {
+    text-align: center;
+    color: white;
+    padding: 2px;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    bottom: 0;
+    width: 100%;  
+    margin-bottom: 8px;
+}
+
+.container{
+    width: 420px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 2px solid black;
+    border-radius: 10px;
+    color: white;
+    padding: 30px 40px;
+
+}
+
+.container h1{
+    text-align: center;
+    font-size: 36px;
+}
+
+.input-box{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+}
+
+.input-box input{
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    outline: none;
+    padding: 20px 45px 20px 20px;
+    background-color: transparent;
+}
+
+.input-box img{
+    position: absolute;
+    right: 20px;
+    font-size: 20px;
+    top: 25%;
+}
+
+.input-box input::placeholder{
+    color: white;    
+}
+
+input{
+    color: white;
+}
+
+.senha{
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+}
+
+.registro{
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+}
+
+.link-registro{
+    text-decoration: none;
+    color: #fff;
+}
+
+.senha-input{
+    accent-color: #fff;
+    margin-right: 5px;
+}
+
+.link-senha{
+    text-decoration: none;
+    color: #fff;
+}
+
+.btn{
+    margin-top: 10px;
+    border-radius: 10px;
+    width: 75px;
+    background-color: transparent;
+    color: white;
+}
+
+.sem-icone::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: none;
+}
+
+.logo-rodape{
+    width: 25px;
+    position: relative;
+    top: 4px;
+    margin-left: 20px;
+    margin-right: 5px;
+}
+
+.img-roda{
+    text-decoration: none;
+    color: #fff;
+}
+
+.btn{
+    margin-left: 125px;
+}
+
+.voltar{
+    text-decoration: none;
+    color: #fff;
+}
+
+.btn2{
+    margin-right: 100px;
+    border-radius: 10px;
+    width: 75px;
+    background-color: transparent;
+    color: white;   
+}
