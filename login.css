@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
-
-
-body{
+body {
     background-image: url(img/bac2.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -10,12 +8,15 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    margin: 0;
+    padding: 0;
 }
-*{
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-font-family: "Open Sans", sans-serif;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
 }
 
 footer {
@@ -29,89 +30,101 @@ footer {
     margin-bottom: 8px;
 }
 
-.container{
+.container {
     width: 420px;
     background-color: rgba(0, 0, 0, 0.5);
     border: 2px solid black;
     border-radius: 10px;
     color: white;
     padding: 30px 40px;
-
 }
 
-.container h1{
+.container h1 {
     text-align: center;
     font-size: 36px;
 }
 
-.input-box{
+.input-box {
     position: relative;
     width: 100%;
     height: 50px;
     margin: 30px 0;
 }
 
-.input-box input{
+.input-box input {
     width: 100%;
     height: 100%;
+    border: 2px solid rgba(255, 255, 255, 0.2);
     border-radius: 15px;
     outline: none;
     padding: 20px 45px 20px 20px;
     background-color: transparent;
+    color: white;
+    font-size: 16px;
 }
 
-.input-box img{
+.input-box img {
     position: absolute;
     right: 20px;
     font-size: 20px;
-    top: 25%;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
-.input-box input::placeholder{
+.input-box input::placeholder {
     color: white;    
 }
 
-input{
-    color: white;
-}
-
-.senha{
+.senha {
     display: flex;
     justify-content: space-between;
     font-size: 16px;
+    margin: 15px 0;
 }
 
-.registro{
+.registro {
     display: flex;
     justify-content: space-between;
     font-size: 16px;
+    margin-top: 20px;
 }
 
-.link-registro{
+.link-registro {
     text-decoration: none;
-    color: #fff;
+    color: #4CAF50;
+    font-weight: 600;
 }
 
-.senha-input{
-    accent-color: #fff;
+.senha-input {
+    accent-color: #4CAF50;
     margin-right: 5px;
 }
 
-.link-senha{
+.link-senha {
     text-decoration: none;
-    color: #fff;
+    color: #4CAF50;
+    font-weight: 600;
 }
 
-.btn{
-    margin-top: 10px;
+.btn {
+    margin-top: 20px;
     border-radius: 10px;
-    width: 75px;
-    background-color: transparent;
+    width: 100%;
+    height: 45px;
+    background-color: #4CAF50;
     color: white;
-    margin-bottom: 10px;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
 }
 
-.logo-rodape{
+.btn:hover {
+    background-color: #45a049;
+}
+
+.logo-rodape {
     width: 25px;
     position: relative;
     top: 4px;
@@ -119,7 +132,58 @@ input{
     margin-right: 5px;
 }
 
-.img-roda{
+.img-roda {
     text-decoration: none;
-    color: #fff;
+    color: #4CAF50;
+    font-weight: 600;
+}
+
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+}
+
+.popup-login {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    width: 350px;
+    text-align: center;
+    animation: fadeIn 0.3s;
+}
+
+.popup-login::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: #4CAF50;
+    border-radius: 0 0 10px 10px;
+    animation: progress 3s linear forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translate(-50%, -60%); }
+    to { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+@keyframes progress {
+    from { width: 100%; }
+    to { width: 0%; }
 }

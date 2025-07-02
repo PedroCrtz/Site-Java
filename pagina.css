@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --light-color: #ecf0f1;
+    --dark-color: #2c3e50;
+    --success-color: #2ecc71;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 85%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 60px 0 40px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+nav {
+    background-color: var(--dark-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    flex: 1;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 15px 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: var(--secondary-color);
+}
+
+.card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin: 30px 0;
+}
+
+.card h2 {
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--secondary-color);
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.bolsa-item, .faculdade-item, .dica {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.bolsa-item:hover, .faculdade-item:hover, .dica:hover {
+    transform: translateY(-5px);
+}
+
+.bolsa-item img, .faculdade-item img, .dica img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.bolsa-item h3, .faculdade-item h3, .dica h3 {
+    padding: 15px 20px 0;
+    color: var(--primary-color);
+}
+
+.bolsa-item p, .faculdade-item p, .dica p {
+    padding: 10px 20px;
+    color: #666;
+}
+
+.rating {
+    color: #f39c12;
+    padding: 0 20px 15px;
+    font-size: 1.2rem;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 10px 20px;
+    margin: 15px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+.dicas-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.dica {
+    display: flex;
+    flex-direction: column;
+}
+
+.dica img {
+    height: 150px;
+}
+
+.contact-section {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 50px 0;
+}
+
+.contact-form {
+    display: grid;
+    gap: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 12px 15px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1rem;
+}
+
+.contact-form textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+footer {
+    background-color: var(--dark-color);
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+}
+
+footer .social-links {
+    margin-top: 20px;
+}
+
+footer .social-links a {
+    margin: 0 10px;
+}
+
+footer .social-links img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+}
+
+footer .social-links a:hover img {
+    transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+}

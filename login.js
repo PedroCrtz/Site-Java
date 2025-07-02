@@ -1,74 +1,69 @@
-document.querySelectorAll("input[type='password']").forEach((input) => {
-    const toggle = document.createElement("button");
-    toggle.textContent = "Mostrar Senha";
-    toggle.type = "button";
-    toggle.style.position = "absolute";
-    toggle.style.right = "10px";
-    toggle.style.top = "130%";
-    toggle.style.transform = "translateY(-50%)";
-    toggle.style.background = "transparent";
-    toggle.style.border = "none";
-    toggle.style.color = "#fff";
-    toggle.style.cursor = "pointer";
+document.addEventListener('DOMContentLoaded', function() {
+  // Mostrar/ocultar senha
+  const passwordInput = document.querySelector('input[type="password"]');
+  const showPasswordBtn = document.createElement('span');
+  showPasswordBtn.innerHTML = 'Mostrar Senha';
+  showPasswordBtn.style.position = 'absolute';
+  showPasswordBtn.style.right = '4px';
+  showPasswordBtn.style.top = '130%';
+  showPasswordBtn.style.transform = 'translateY(-50%)';
+  showPasswordBtn.style.cursor = 'pointer';
+  showPasswordBtn.style.userSelect = 'none';
+  showPasswordBtn.style.color = '#4CAF50';
   
-    input.parentElement.appendChild(toggle);
+  passwordInput.parentElement.appendChild(showPasswordBtn);
   
-    toggle.addEventListener("click", () => {
-      input.type = input.type === "password" ? "text" : "password";
-    });
-  });
-  
-  const form = document.querySelector("form");
-  const nomeField = document.querySelector("input[name='nome'], input[placeholder='Nome']");
-  const lembrarInput = document.querySelector(".senha-input");
-  
-  if (form && nomeField) {
-    const nomeSalvo = localStorage.getItem("usuario");
-    if (nomeSalvo) nomeField.value = nomeSalvo;
-  
-    form.addEventListener("submit", () => {
-      if (lembrarInput && lembrarInput.checked) {
-        localStorage.setItem("usuario", nomeField.value);
+  showPasswordBtn.addEventListener('click', function() {
+      if (passwordInput.type === 'password') {
+          passwordInput.type = 'text';
+          this.innerHTML = 'Mostrar Senha';
       } else {
-        localStorage.removeItem("usuario");
+          passwordInput.type = 'password';
+          this.innerHTML = 'Mostrar Senha';
       }
-  
-      localStorage.setItem("nomeUsuario", nomeField.value);
-      localStorage.setItem("mostrarSaudacao", "true"); // Ativa popup na próxima página
-    });
-  }
-  
-  if (form) {
-    form.addEventListener("submit", (e) => {
-      const email = form.querySelector("input[type='email']");
-      if (email && !email.value.includes("@")) {
-        e.preventDefault();
-        alert("Por favor, insira um email válido.");
-      }
-    });
-  }
-  
-  window.addEventListener("DOMContentLoaded", () => {
-    const popup = document.getElementById("popup");
-    const fechar = document.getElementById("fechar");
-    const mensagem = document.getElementById("mensagem-saudacao");
-  
-    const deveMostrar = localStorage.getItem("mostrarSaudacao");
-  
-    if (popup && mensagem && deveMostrar === "true") {
-      const nomeUsuario = localStorage.getItem("nomeUsuario") || "visitante";
-      const hora = new Date().getHours();
-      let saudacao = hora < 12 ? "Bom dia" : hora < 18 ? "Boa tarde" : "Boa noite";
-  
-      mensagem.textContent = `${saudacao}, ${nomeUsuario}! Bem-vindo ao Automação Hoje 👋`;
-  
-      popup.style.display = "flex";
-      localStorage.removeItem("mostrarSaudacao"); // Evita aparecer novamente
-  
-      fechar.onclick = () => popup.style.display = "none";
-      window.onclick = (e) => {
-        if (e.target === popup) popup.style.display = "none";
-      };
-    }
   });
-  
+
+  // Lógica do formulário
+  const form = document.getElementById('loginForm');
+  const usernameInput = document.getElementById('username');
+  const rememberCheckbox = document.getElementById('remember');
+  const popupLogin = document.getElementById('popup-login');
+  const popupOverlay = document.getElementById('popup-overlay');
+
+  // Carregar usuário salvo se existir
+  const savedUser = localStorage.getItem('savedUser');
+  if (savedUser) {
+      usernameInput.value = savedUser;
+      rememberCheckbox.checked = true;
+  }
+
+  form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const username = usernameInput.value.trim();
+      const password = passwordInput.value.trim();
+      
+      if (!username || !password) {
+          alert('Por favor, preencha todos os campos.');
+          return;
+      }
+      
+      // Salvar usuário se o checkbox estiver marcado
+      if (rememberCheckbox.checked) {
+          localStorage.setItem('savedUser', username);
+      } else {
+          localStorage.removeItem('savedUser');
+      }
+      
+      // Mostrar popup
+      popupOverlay.style.display = 'block';
+      popupLogin.style.display = 'block';
+      
+      // Redirecionar após 3 segundos
+      setTimeout(function() {
+          popupOverlay.style.display = 'none';
+          popupLogin.style.display = 'none';
+          window.location.href = 'pagina.html';
+      }, 3000);
+  });
+});
